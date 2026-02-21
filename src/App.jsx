@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import TabBar from './components/TabBar';
-import CardGrid from './components/CardGrid';
+import TierList from './components/TierList';
 import AddItemModal from './components/AddItemModal';
 import DetailModal from './components/DetailModal';
 
@@ -53,7 +53,7 @@ function App() {
     <div style={{ minHeight: '100vh' }}>
       <Header onAdd={() => setShowAddModal(true)} />
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
-      <CardGrid items={filteredItems} onCardClick={setSelectedItem} />
+      <TierList items={filteredItems} onCardClick={setSelectedItem} />
 
       {showAddModal && (
         <AddItemModal
