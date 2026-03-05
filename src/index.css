@@ -14,3 +14,68 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Range slider */
+.completion-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #2a2a3a;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.completion-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366f1;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.6);
+}
+.completion-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366f1;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+/* Card hover effect */
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0f0f0f; }
+::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a4a; }
+
+/* Image upload hover — show "Change" overlay */
+div[style*="imageUpload"]:hover div[style*="imageChangeOverlay"],
+div:hover > div[style*="imageChangeOverlay"] {
+  opacity: 1 !important;
+}
+
+/* Picker item hover */
+div[style*="pickerItem"]:hover {
+  border-color: #6366f1 !important;
+}
+
+/* Result item hover */
+div[style*="resultItem"]:hover {
+  border-color: #6366f1 !important;
+}
+
+/* Select styling */
+select option {
+  background: #1e1e2e;
+  color: #fff;
+}
