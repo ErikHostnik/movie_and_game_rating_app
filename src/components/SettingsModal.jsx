@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
-const SettingsModal = ({ settings, onSave, onClose }) => {
+const SettingsModal = ({ settings, onSave, onClose, onExport, onImport }) => {
+  const importRef = useRef(null);
   const [tmdb, setTmdb] = useState(settings.tmdbApiKey || '');
   const [rawg, setRawg] = useState(settings.rawgApiKey || '');
 
@@ -69,6 +70,22 @@ const SettingsModal = ({ settings, onSave, onClose }) => {
           </section>
 
           <section style={styles.section}>
+            <h3 style={styles.sectionTitle}>Data</h3>
+            <p style={styles.hint}>Export your ratings as a JSON backup or import a previously exported file.</p>
+            <div style={styles.dataRow}>
+              <button style={styles.dataBtn} onClick={onExport}>↑ Export</button>
+              <button style={styles.dataBtn} onClick={() => importRef.current?.click()}>↓ Import</button>
+              <input
+                ref={importRef}
+                type="file"
+                accept=".json"
+                onChange={(e) => { onImport(e); onClose(); }}
+                style={{ display: 'none' }}
+              />
+            </div>
+          </section>
+
+          <section style={styles.section}>
             <h3 style={styles.sectionTitle}>About</h3>
             <p style={styles.hint}>
               My Ratings — a personal tracker for movies and games.
@@ -118,6 +135,13 @@ const styles = {
     padding: '10px 14px',
     background: '#12121a', border: '1px solid #2a2a3a', borderRadius: '8px',
     color: '#fff', fontSize: '0.9rem', outline: 'none',
+  },
+  dataRow: { display: 'flex', gap: '10px' },
+  dataBtn: {
+    flex: 1, padding: '10px',
+    background: 'transparent', color: '#aaa',
+    border: '1px solid #2a2a3a', borderRadius: '8px',
+    fontSize: '0.88rem', cursor: 'pointer',
   },
   footer: {
     display: 'flex', gap: '10px',

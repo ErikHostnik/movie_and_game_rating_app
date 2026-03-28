@@ -1,11 +1,9 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 const PROFILE_COLORS = ['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6', '#3b82f6'];
 
 const Header = ({
   onAdd,
-  onExport,
-  onImport,
   onOpenSettings,
   profiles,
   activeProfileId,
@@ -13,7 +11,6 @@ const Header = ({
   onAddProfile,
   onRemoveProfile,
 }) => {
-  const importRef = useRef(null);
   const [showProfiles, setShowProfiles] = useState(false);
   const [newProfileName, setNewProfileName] = useState('');
   const [newProfileColor, setNewProfileColor] = useState(PROFILE_COLORS[1]);
@@ -106,25 +103,6 @@ const Header = ({
         </div>
 
         <div style={styles.divider} />
-
-        <button style={styles.iconBtn} onClick={onExport} title="Export data">
-          ↑ Export
-        </button>
-
-        <button
-          style={styles.iconBtn}
-          onClick={() => importRef.current?.click()}
-          title="Import data"
-        >
-          ↓ Import
-        </button>
-        <input
-          ref={importRef}
-          type="file"
-          accept=".json"
-          onChange={onImport}
-          style={{ display: 'none' }}
-        />
 
         <button style={styles.iconBtn} onClick={onOpenSettings} title="Settings">
           ⚙ Settings

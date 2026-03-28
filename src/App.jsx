@@ -136,8 +136,6 @@ function App() {
     <div style={{ minHeight: '100vh' }}>
       <Header
         onAdd={() => setShowAddModal(true)}
-        onExport={handleExport}
-        onImport={handleImport}
         onOpenSettings={() => setShowSettings(true)}
         profiles={profiles}
         activeProfileId={activeProfileId}
@@ -190,6 +188,8 @@ function App() {
           settings={settings}
           onSave={setSettings}
           onClose={() => setShowSettings(false)}
+          onExport={handleExport}
+          onImport={handleImport}
         />
       )}
     </div>
