@@ -1,16 +1,31 @@
-# React + Vite
+# Movie & Game Rating App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal tracker for movies and games. Rate what you've watched or played, keep a wishlist, and get a quick look at your stats — all in one place.
 
-Currently, two official plugins are available:
+## What's inside
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Rating cards** — rate titles on a 0.5–10 scale with a tier label (F through S), add genres, status, and a cover image
+- **Tier list view** — visual breakdown of all your ratings grouped by tier
+- **Timeline** — chronological view of when you added things
+- **Dashboard** — stats like average rating, genre distribution, and status breakdown
+- **Filter & sort** — filter by genre, status, or rating range; sort by date, rating, or name
+- **Compare modal** — put two titles side by side
+- **Wishlist** — separate view for things you want to watch or play
+- **Image cropper** — crop and save custom cover images
+- **PWA support** — installable as a standalone app
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** — UI
+- **Vite** — build tool and dev server
+- **ESLint** — linting
+- Vanilla CSS with inline styles — no UI library, no Tailwind
 
-## Expanding the ESLint configuration
+## Running locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Data is stored in `localStorage` — no backend, no account needed.
