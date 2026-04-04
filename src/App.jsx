@@ -14,7 +14,7 @@ import { WISHLIST_STATUSES } from './constants';
 const STORAGE_KEY  = 'myRatingsData';
 const PROFILES_KEY = 'myRatingsProfiles';
 const ACTIVE_KEY   = 'myRatingsActiveProfile';
-const SETTINGS_KEY = 'myRatingsSettings';
+const SETTINGS_KEY = 'myRatingsSettings'; //hello
 
 const DEFAULT_PROFILE = { id: 'default', name: 'My Profile', color: '#6366f1' };
 
